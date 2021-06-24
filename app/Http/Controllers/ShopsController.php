@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
+use App\Models\Area;
+use App\Models\Genre;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
 
 class ShopsController extends Controller
 {
     public function get()
     {
-        $items=Shop::all();
+        $items=Area::with('shops')->get();
+        $genre=Genre::with('shops')->get();
         return response()->json([
             'message'=>'OK',
-            'data'=>$items
+            'data'=>$items,
         ],200);
     }
 
