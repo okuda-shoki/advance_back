@@ -17,7 +17,7 @@ Route::get('/user/{user_id}',[UsersController::class,'get']);
 Route::get('/user/{user_id}/like',[LikesController::class,'get']);
 Route::get('/user/{user_id}/reservation',[ReservationController::class,'get']);
 Route::get('/shop', [ShopsController::class, 'get']);
-Route::get('/shop/{shop_id}', [ShopsController::class, 'show']);
+Route::get('/shop/{shop_id}', [ShopsController::class,'show']);
 Route::post('/like',[LikesController::class,'post']);
 Route::delete('/like',[LikesController::class,'delete']);
 Route::post('/reservation',[ReservationController::class,'post']);

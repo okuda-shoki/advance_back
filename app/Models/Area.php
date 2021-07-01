@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Area extends Model
 {
-    public function shops()
+    public function shop()
     {
-        return $this->hasOne(Shop::class);
+        return $this->hasMany(Shop::class);
     }
 }
