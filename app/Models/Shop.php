@@ -18,4 +18,5 @@ class Shop extends Model
     {
         return $this->hasOne(Like::class);
     }
+
 }

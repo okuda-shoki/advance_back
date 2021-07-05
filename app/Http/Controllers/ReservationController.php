@@ -40,12 +40,12 @@ class ReservationController extends Controller
     {
       if($user_id){
         $item=Reservation::where('user_id',$user_id)->get();
-        $items=[
-          "item"=>$item
-        ];
-        return response()->json($items,200);
-      }else{
+      return response()->json([
+        'message' => 'User got successfully',
+        'item' => $item
+      ], 200);
+      } else {
       return response()->json(['status' => 'not found'], 404);
-      }
+    }
     }
 }

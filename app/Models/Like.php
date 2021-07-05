@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
 {
-    public function shops()
+    public function shop()
     {
         return $this->belongsTo(Shop::class);
     }
+
 }

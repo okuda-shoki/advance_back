@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Shop;
+use App\Models\Like;
 use Illuminate\Support\Facades\DB;
 
 class ShopsController extends Controller
 {
     public function get()
     {
-        $items=Shop::with('area','genre')->get();
+        $items=Shop::with('area','genre','like')->get();
         return response()->json([
             'message'=>'OK',
             'data'=>$items
